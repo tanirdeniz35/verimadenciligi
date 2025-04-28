@@ -1,0 +1,5 @@
+library("arules")
+veri <- list (c("Makarna","Ayran","Et"), c("Peynir","Ayran","Tavuk"), c("Makarna","Peynir","Ayran","Tavuk"), c("Peynir","Tavuk"))
+islem <- as(veri, "transactions")
+kurallar <- apriori(islem, parameter = list(supp=0.50, conf =0.75, minlen=3))
+inspect(kurallar)
